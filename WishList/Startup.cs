@@ -23,13 +23,14 @@ namespace WishList
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //This is only to make sure that when we encounter any kind of problem we can handle it 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDeveloperExceptionPage(); // takes the argument snd generates the HTML vuiew of the same 
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error"); // if we dont get the devloper Exception page the hope into the specified URL
             }
 
             app.UseRouting();
