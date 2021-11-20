@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace WishList.Models
 {
-    public class Items
+    public class Item
     {
+        public int id { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string description { get; set; }
     }
 }
